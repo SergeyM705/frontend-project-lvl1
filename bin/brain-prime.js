@@ -17,7 +17,7 @@ export default () => {
 
   while (exit !== true) {
     console.log(
-      'Answer "yes" if given number is prime. Otherwise answer "no".'
+      'Answer "yes" if given number is prime. Otherwise answer "no".',
     );
     const question = getRandom(25);
     const rightAnswer = primeNumbers.includes(question) ? 'yes' : 'no';
@@ -26,7 +26,7 @@ export default () => {
 
     if (answer === rightAnswer) {
       console.log('Correct!');
-      victories++;
+      victories += 1;
 
       if (victories === roundsCount) {
         console.log(`Congratulations, ${name}!`);
