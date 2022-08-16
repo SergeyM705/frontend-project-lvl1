@@ -16,7 +16,7 @@ export default () => {
 
   while (exit !== true) {
     const start = getRandom(20);
-    const step = getRandom(5);
+    const step = getRandom(5) + 1;
     const positionToHide = getRandom(10);
 
     let question = start.toString();
@@ -28,6 +28,7 @@ export default () => {
     question = question.split(' ');
     let rightAnswer = question[positionToHide];
     question[positionToHide] = '..';
+    question = question.join(' ');
 
     console.log('What number is missing in the progression?');
 
