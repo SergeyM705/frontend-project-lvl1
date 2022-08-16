@@ -21,13 +21,14 @@ export default () => {
     const question = `${num1} ${num2}`;
 
     let rightAnswer = '1';
-    let arr1 = [];
-    let arr2 = [];
+    const arr1 = [];
+    const arr2 = [];
 
     for (
       let index1 = 1, index2 = 1;
+      // eslint-disable-next-line no-sequences
       index1 <= num1, index2 <= num2;
-      index1++, index2++
+      index1 += 1, index2 += 1
     ) {
       if (num1 % index1 === 0) {
         arr1.push(index1);
@@ -37,7 +38,7 @@ export default () => {
       }
     }
 
-    for (let index = arr1.length - 1; index >= 0; index--) {
+    for (let index = arr1.length - 1; index >= 0; index -= 1) {
       if (arr2.includes(arr1[index])) {
         rightAnswer = arr1[index].toString();
         break;
@@ -51,7 +52,7 @@ export default () => {
 
     if (answer === rightAnswer) {
       console.log('Correct!');
-      victories++;
+      victories += 1;
 
       if (victories === roundsCount) {
         console.log(`Congratulations, ${name}!`);

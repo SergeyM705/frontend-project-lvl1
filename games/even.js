@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brain_even from '../bin/brain-even.js';
+import brainEven from '../bin/brain-even.js';
 
-const even = brain_even();
+// eslint-disable-next-line no-unused-vars
+const even = brainEven();

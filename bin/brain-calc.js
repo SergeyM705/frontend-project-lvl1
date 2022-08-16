@@ -21,7 +21,7 @@ export default () => {
     const sign = signOperation[getRandom(3)];
     const question = `${num1} ${sign} ${num2}`;
 
-    let rightAnswer = "0";
+    let rightAnswer = '0';
 
     switch (sign) {
       case '+':
@@ -44,7 +44,7 @@ export default () => {
 
     if (answer === rightAnswer.toString()) {
       console.log('Correct!');
-      victories++;
+      victories += 1;
 
       if (victories === roundsCount) {
         console.log(`Congratulations, ${name}!`);

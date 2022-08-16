@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brain_prime from '../bin/brain-prime.js';
+import brainPrime from '../bin/brain-prime.js';
 
-brain_prime();
+// eslint-disable-next-line no-unused-vars
+const prime = brainPrime();

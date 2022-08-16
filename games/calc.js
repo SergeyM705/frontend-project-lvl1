@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brain_calc from '../bin/brain-calc.js';
+import brainCalc from '../bin/brain-calc.js';
 
-const calc = brain_calc();
+// eslint-disable-next-line no-unused-vars
+const calc = brainCalc();

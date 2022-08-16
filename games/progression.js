@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import brain_progression from '../bin/brain-progression.js';
+import brainProgression from '../bin/brain-progression.js';
 
-const progression = brain_progression();
+// eslint-disable-next-line no-unused-vars
+const progression = brainProgression();

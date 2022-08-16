@@ -1,4 +1,4 @@
-import readlineSync, { questionNewPassword } from 'readline-sync';
+import readlineSync from 'readline-sync';
 import getRandom from '../src/getRandom.js';
 import { roundsCount, gamersName, wrongAnswer } from '../src/index.js';
 
@@ -21,12 +21,12 @@ export default () => {
 
     let question = start.toString();
 
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 10; i += 1) {
       question = `${question} ${(start + step * i).toString()}`;
     }
 
     question = question.split(' ');
-    let rightAnswer = question[positionToHide];
+    const rightAnswer = question[positionToHide];
     question[positionToHide] = '..';
     question = question.join(' ');
 
@@ -37,7 +37,7 @@ export default () => {
 
     if (answer === rightAnswer) {
       console.log('Correct!');
-      victories++;
+      victories += 1;
 
       if (victories === roundsCount) {
         console.log(`Congratulations, ${name}!`);

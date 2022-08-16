@@ -23,9 +23,9 @@ export default () => {
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if ((answer === 'yes' && isEven) || (answer === 'no') & !isEven) {
+    if ((answer === 'yes' && isEven) || ((answer === 'no') && !isEven)) {
       console.log('Correct!');
-      victories++;
+      victories += 1;
 
       if (victories === roundsCount) {
         console.log(`Congratulations, ${name}!`);
