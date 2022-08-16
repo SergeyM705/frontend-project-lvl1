@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import getRandom from '../src/getRandom.js';
-import { roundsCount, gamersName, wrongAnswer } from '../src/index.js';
+import { gamersName, checkAnswer, exit } from '../src/index.js';
 
 export default () => {
   console.log('brain-gcd');
@@ -10,9 +10,6 @@ export default () => {
   const name = gamersName();
 
   console.log(`Hello, ${name}!`);
-
-  let exit = false;
-  let victories = 0;
 
   while (exit !== true) {
     const num1 = getRandom(50) + 1;
@@ -50,17 +47,6 @@ export default () => {
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer === rightAnswer) {
-      console.log('Correct!');
-      victories += 1;
-
-      if (victories === roundsCount) {
-        console.log(`Congratulations, ${name}!`);
-        exit = true;
-      }
-    } else {
-      wrongAnswer(answer, rightAnswer, name);
-      exit = true;
-    }
+    checkAnswer(answer, rightAnswer, name);
   }
 };

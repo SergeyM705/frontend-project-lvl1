@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import getRandom from '../src/getRandom.js';
-import { roundsCount, gamersName, wrongAnswer } from '../src/index.js';
+import { gamersName, checkAnswer, exit } from '../src/index.js';
 
 export default () => {
   console.log('brain-prime');
@@ -11,8 +11,6 @@ export default () => {
 
   console.log(`Hello, ${name}!`);
 
-  let exit = false;
-  let victories = 0;
   const primeNumbers = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
 
   while (exit !== true) {
@@ -24,17 +22,6 @@ export default () => {
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer === rightAnswer) {
-      console.log('Correct!');
-      victories += 1;
-
-      if (victories === roundsCount) {
-        console.log(`Congratulations, ${name}!`);
-        exit = true;
-      }
-    } else {
-      wrongAnswer(answer, rightAnswer, name);
-      exit = true;
-    }
+    checkAnswer(answer, rightAnswer, name);
   }
 };
