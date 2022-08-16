@@ -1,4 +1,3 @@
-const randomNum = (num) => {
-   return Math.floor(Math.random() * num)};
+const randomNum = (num) => Math.floor(Math.random() * num);
 
 export default randomNum;

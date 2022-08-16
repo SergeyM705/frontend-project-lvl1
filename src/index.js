@@ -10,6 +10,6 @@ export const gamersName = () => {
 
 export const wrongAnswer = (answer, rightAnswer, name) => {
   console.log(
-    `"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`
+    `"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}". Let's try again, ${name}!`,
   );
 };
